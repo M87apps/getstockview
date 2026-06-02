@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stockview — Inventory, unified.</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0b2e;
+      --surface: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.10);
+      --purple: #7B5DFB;
+      --purple-light: #a68eff;
+      --text: #ffffff;
+      --muted: rgba(255,255,255,0.55);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header img { height: 20px; width: auto; }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.15s;
+    }
+    nav a:hover { color: var(--text); }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 24px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(123,93,251,0.15);
+      border: 1px solid rgba(123,93,251,0.35);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--purple-light);
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 700;
+      letter-spacing: -1.5px;
+      line-height: 1.08;
+      margin-bottom: 20px;
+    }
+
+    h1 span { color: var(--purple-light); }
+
+    p.tagline {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.6;
+      margin-bottom: 44px;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--purple);
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 13px 28px;
+      border-radius: 10px;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .cta:hover { background: #6a4fe8; transform: translateY(-1px); }
+
+    .features {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 72px;
+      max-width: 860px;
+    }
+
+    .feature {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 28px;
+      text-align: left;
+      flex: 1;
+      min-width: 200px;
+      max-width: 260px;
+    }
+
+    .feature-icon {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .feature h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .feature p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px;
+      font-size: 13px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://raw.githubusercontent.com/M87apps/stockview/main/public/logo.svg" alt="Stockview" />
+  <nav>
+    <a href="privacy.html">Privacy Policy</a>
+  </nav>
+</header>
+
+<main>
+  <div class="badge">Shopify App</div>
+  <h1>Inventory,<br><span>unified.</span></h1>
+  <p class="tagline">
+    See your Shopify stock and Amazon FBA, AWD, and multi-marketplace inventory
+    in one real-time dashboard — no spreadsheets needed.
+  </p>
+  <a class="cta" href="https://apps.shopify.com/" target="_blank" rel="noopener">
+    Add to Shopify
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+  </a>
+
+  <div class="features">
+    <div class="feature">
+      <div class="feature-icon">📦</div>
+      <h3>Multi-channel view</h3>
+      <p>Shopify locations, US/EU/UK/AU FBA, and AWD — all in one row per SKU.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">⚡</div>
+      <h3>Real-time sync</h3>
+      <p>Inventory syncs automatically every hour, or on demand with one click.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🔍</div>
+      <h3>SKU filtering</h3>
+      <p>Select any group of SKUs to see their combined total across all channels.</p>
+    </div>
+    <div class="feature">
+      <div class="feature-icon">🌍</div>
+      <h3>Global overview</h3>
+      <p>Filter by channel to get the exact number you need — EU only, FBA only, anything.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 Stockview &nbsp;·&nbsp;
+  <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+  <a href="mailto:hello@getstockview.com">hello@getstockview.com</a>
+</footer>
+
+</body>
+</html>
